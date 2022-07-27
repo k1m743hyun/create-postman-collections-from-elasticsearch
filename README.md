@@ -6,12 +6,12 @@
 - Elasticsearch에 있는 로그를 기반으로 Postman Collection을 만드는 코드입니다.
 
 
-### Environment
+## Environment
 
 - Python 3
 
 
-### Installation
+## Installation
 
 #### 1) Clone the repo
 ```
@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ````
 
 
-### Usage
+## Usage
 
 ```
 python main.py
