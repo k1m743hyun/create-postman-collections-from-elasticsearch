@@ -1,4 +1,4 @@
-# create-postman-collection-from-elasticsearch
+# Create Postman Collection from Elasticsearch
 
 
 ## Description
@@ -33,4 +33,4 @@ python main.py
 
 ## License
 
-This project is licensed under the MIT License. - See the `LICENSE.md` file for details
+This project is licensed under the MIT License. See the `LICENSE.md` file for details
