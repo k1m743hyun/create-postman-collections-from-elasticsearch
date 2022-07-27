@@ -1,4 +1,4 @@
-# Create Postman Collection from Elasticsearch
+# Create the Postman Collections from Elasticsearch
 
 
 ## Description
