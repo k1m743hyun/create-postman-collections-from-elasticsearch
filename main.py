@@ -8,7 +8,17 @@ from urllib import parse
 from datetime import datetime, timedelta
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 
-############################## 검색 조건 ##############################
+############################## Global Variables ##############################
+
+# ElasticSearch Info
+ES_HOST = ""
+ES_ID = ""
+ES_PW = ""
+
+# Log Info
+LOG_INDEX = ""
+LOG_FIELD = ""
+LOG_TEXT = ""
 
 # 로그 시작 날짜 시간
 TIME_PERIOD_START = "2022-06-06 00:00:00.000"
@@ -25,22 +35,10 @@ API_LIST = ['']
 # 결과 생성 폴더 이름
 DIRNAME = "Test Case"
 
-# 검색 환경
+# Environment
 PROFILE = "dev"
 
-############# CloudFront #############
-# 검색 대상 INDEX
-NGINX_INDEX = ""
-
-# 검색 대상 FIELD 및 TEXT
-NGINX_FIELD = ""
-NGINX_TEXT = ""
-
-###### ElasticSearch Info ######
-ES_HOST = ""
-ES_ID = ""
-ES_PW = ""
-#####################################################################
+##############################################################################
 
 
 def date_range(start, end):
@@ -92,11 +90,11 @@ def get_doc(api_name):
 
     for name in api_name.split('/'):
         if name:
-            body["query"]["bool"]["must"].append({"match": {NGINX_FIELD: name}})
+            body["query"]["bool"]["must"].append({"match": {LOG_FIELD: name}})
 
     index_list = []
     for date in date_range(TIME_PERIOD_START.split(' ')[0], TIME_PERIOD_END.split(' ')[0]):
-        index_list += es.indices.get(NGINX_INDEX + date)
+        index_list += es.indices.get(LOG_INDEX + date)
 
     resp = es.search(
         index=sorted(list(set(index_list))),
