@@ -24,7 +24,7 @@ git clone https://github.com/k1m743hyun/create-postman-collection-from-elasticse
 pip install -r requirements.txt
 ````
 
-### Executing program
+### Usage
 
 ```
 python main.py
